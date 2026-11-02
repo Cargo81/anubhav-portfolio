@@ -49,6 +49,15 @@ function Footer() {
               >
                 LinkedIn ↗
               </a>
+
+              <a
+                href="https://wa.me/918169653781"
+                target="_blank"
+                rel="noreferrer"
+                className="border border-zinc-700 rounded-full px-4 py-2 text-sm text-zinc-300 hover:bg-lime-400 hover:text-black hover:border-lime-400  transition"
+              >
+                WhatsApp ↗
+              </a>
             </div>
           </div>
 

@@ -187,6 +187,16 @@ const Contact = () => {
                                 >
                                     LinkedIn ↗
                                 </a>
+
+                                <a
+                                    href="https://wa.me/918169653781"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-5 py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-lime-400 hover:border-lime-400 transition"
+                                >
+                                    WhatsApp ↗
+                                </a>
+
                             </div>
                         </div>
                     </div>
