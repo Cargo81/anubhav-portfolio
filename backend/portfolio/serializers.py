@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Contact, Testimonial
+from .models import Contact, Testimonial, BlogPost
 
 
 class ContactSerializer(serializers.ModelSerializer):
@@ -34,3 +34,22 @@ class TestimonialSerializer(serializers.ModelSerializer):
         ]
 
         read_only_fields = fields
+
+
+class BlogPostSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = BlogPost
+
+        fields = [
+            "id",
+            "title",
+            "slug",
+            "category",
+            "excerpt",
+            "content",
+            "image",
+            "read_time",
+            "is_featured",
+            "published_at",
+        ]

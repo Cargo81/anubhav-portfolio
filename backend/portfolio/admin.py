@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Testimonial
+from .models import Contact, Testimonial, BlogPost
 
 # Register your models here.
 
@@ -47,3 +47,43 @@ class TestimonialAdmin(admin.ModelAdmin):
     )
 
      ordering = ("-created_at",)
+     
+
+@admin.register(BlogPost)
+class BlogPostAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "category",
+        "is_featured",
+        "is_published",
+        "published_at",
+    )
+
+    list_filter = (
+        "category",
+        "is_featured",
+        "is_published",
+    )
+
+    search_fields = (
+        "title",
+        "excerpt",
+        "content",
+    )
+
+    prepopulated_fields = {
+        "slug": ("title",)
+    }
+
+    list_editable = (
+        "is_featured",
+        "is_published",
+    )
+
+    readonly_fields = (
+        "created_at",
+        "updated_at",
+    )
+
+    ordering = ("-created_at",)
