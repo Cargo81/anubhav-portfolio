@@ -105,7 +105,7 @@ export default function Blog() {
   // ==============================
   if (selectedPost) {
     return (
-      <main className="min-h-screen bg-zinc-950 text-white px-6 py-24">
+      <main id="blog" className="min-h-screen bg-zinc-950 text-white px-6 py-24">
         <article className="max-w-3xl mx-auto">
 
           <button

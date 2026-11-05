@@ -9,6 +9,9 @@ const Navbar = () => {
         { name: "About", href: "#about" },
         { name: "Skills", href: "#skills" },
         { name: "Projects", href: "#projects" },
+        { name: "Experience", href: "#experience" },
+        { name: "Testimonials", href: "#testimonials" },
+        { name: "Blog", href: "#blog" },
         { name: "Contact", href: "#contact" },
     ];
 
@@ -18,12 +21,16 @@ const Navbar = () => {
             <div className="flex items-center justify-between px-6 py-5 mx-auto max-w-6xl">
 
                 {/* Logo */}
-                <a href="#home" className="text-2xl font-bold text-white">
+                <a
+                    href="#home"
+                    onClick={() => setIsOpen(false)}
+                    className="text-2xl font-bold text-white"
+                >
                     Portfolio<span className="text-lime-400">.</span>
                 </a>
 
                 {/* Desktop Links */}
-                <div className="hidden gap-8 md:flex">
+                <div className="hidden items-center gap-5 lg:flex">
                     {links.map((link) => (
                         <a
                             key={link.name}
@@ -45,9 +52,10 @@ const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="text-2xl text-white md:hidden"
+                    className="text-2xl text-white lg:hidden"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
+                    aria-expanded={isOpen}
                 >
                     {isOpen ? "✕" : "☰"}
                 </button>
@@ -56,7 +64,8 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="flex flex-col gap-5 border-t border-white/10 bg-zinc-950 px-6 py-6 md:hidden">
+                <div className="flex flex-col gap-5 border-t border-white/10 bg-zinc-950 px-6 py-6 lg:hidden">
+
                     {links.map((link) => (
                         <a
                             key={link.name}
@@ -75,6 +84,7 @@ const Navbar = () => {
                     >
                         Let's Talk ↗
                     </a>
+
                 </div>
             )}
 
