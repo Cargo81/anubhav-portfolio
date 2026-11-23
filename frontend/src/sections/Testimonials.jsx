@@ -21,7 +21,7 @@ export default function Testimonials() {
 
         const data = await response.json();
 
-        setTestimonials(data);
+        setTestimonials(Array.isArray(data) ? data : data.results || []);
       } catch (err) {
         console.error("Testimonials API error:", err);
         setError("Unable to load testimonials.");

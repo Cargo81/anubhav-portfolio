@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { API_BASE } from "../config";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ const Contact = () => {
 
         try {
             const response = await fetch(
-                "http://127.0.0.1:8000/api/contact/",
+                `${API_BASE}/api/contact/`,
                 {
                     method: "POST",
                     headers: {
@@ -39,7 +40,7 @@ const Contact = () => {
                 }
             );
 
-            const data = await response.json();
+            const data = await response.json().catch(() => ({}));
 
             if (!response.ok) {
                 const errorMessage = Object.values(data)
