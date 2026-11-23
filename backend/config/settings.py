@@ -27,6 +27,11 @@ ALLOWED_HOSTS = [
     if h.strip()
 ]
 
+# Render sets this automatically (e.g. anubhav-portfolio-9va6.onrender.com)
+_render_host = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if _render_host and _render_host not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append(_render_host)
+
 
 # ---------------------------------------------------------------
 # Applications
